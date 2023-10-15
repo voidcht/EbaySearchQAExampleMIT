@@ -17,12 +17,17 @@ public class TestNGUtilities {
         driver.manage().window().maximize();
 
         //providing the URL for the website to open
-        driver.get("https://www.ebay.com");
+        BaseUrl baseUrl = new BaseUrl(driver);
+        baseUrl.loadURL();
     }
 
 
     @AfterMethod
     public void closeBrowser(){
+
+        //closing the driver
+//        driver.close();  //ChromeDriver was not still closed, was running in the background.
+
         driver.quit();
     }
 

@@ -34,9 +34,7 @@ public class EbaySearch extends TestNGUtilities{
 
 
 
-    //ChromeDriver was not still closed, was running in the background.
-       //closing the driver
-//        driver.close();
+
 
 
     }
