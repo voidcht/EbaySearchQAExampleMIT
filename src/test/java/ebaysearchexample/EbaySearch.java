@@ -15,18 +15,35 @@ public class EbaySearch extends TestNGUtilities{
     @Test
     public void searchMobilePhones() throws InterruptedException {
 
-        //to identify the search element using xpath & to provide the text to input.
-        driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("Mobile Phones");
+        //providing the URL for the website to open
+        BaseUrl baseUrl = new BaseUrl(driver);
+        EbayHome home = baseUrl.loadURL();
 
-        //find the drop-down box
-        //needs a web element for Select object
-        Select select = new Select(driver.findElement(By.xpath("//select[@id='gh-cat']")));
+        Thread.sleep(1000);
+        home.typeOnInputField("Mobile Phones");
+        Thread.sleep(2000);
 
-        //Selecting the category
-        select.selectByVisibleText("Cell Phones & Accessories");
+        home.selectByVisibleText("Cell Phones & Accessories");
+        home.ClickSearchBtn();
 
-        //find the search button and execute click method
-        driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
+
+
+
+
+        //deprecated since using PageObject Model (EbayHome class)
+
+//        //to identify the search element using xpath & to provide the text to input.
+//        driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("Mobile Phones");
+//
+//        //find the drop-down box
+//        //needs a web element for Select object
+//        Select select = new Select(driver.findElement(By.xpath("//select[@id='gh-cat']")));
+//
+//        //Selecting the category
+//        select.selectByVisibleText("Cell Phones & Accessories");
+//
+//        //find the search button and execute click method
+//        driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
 
 
         //adding a delay

@@ -1,6 +1,7 @@
 package ebaysearchexample;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class BaseUrl {
 
@@ -11,8 +12,11 @@ public class BaseUrl {
     }
 
 
-    public void loadURL(){
+    public EbayHome loadURL(){
+
         driver.get("https://www.ebay.com");
+
+        return PageFactory.initElements(driver,EbayHome.class);
     }
 
 

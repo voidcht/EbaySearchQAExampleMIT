@@ -16,9 +16,7 @@ public class TestNGUtilities {
         //optional: to maximize the browser window
         driver.manage().window().maximize();
 
-        //providing the URL for the website to open
-        BaseUrl baseUrl = new BaseUrl(driver);
-        baseUrl.loadURL();
+
     }
 
 
